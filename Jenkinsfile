@@ -8,9 +8,8 @@ pipeline {
       steps {
         echo "Hello, ${params.Name} from Jenkins Blue Ocean!"
         sh """
-                echo 'Hello, ${params.Name} from Jenkins Blue Ocean!'
-                fakeroot apt-get install debmake -y
-                fakeroot deploy/packaging_deb.sh
+                echo sudo apt-get install debmake -y
+                echo deploy/packaging_deb.sh
         """
 
       }
