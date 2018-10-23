@@ -8,6 +8,11 @@ pipeline {
       steps {
         echo 'I am building some code!'
         echo "Hello, ${params.Name} from Jenkins Blue Ocean!"
+        bash '''#!/bin/bash
+                 sudo apt-get install debmake -y
+                 deploy/packaging_deb.sh 
+        '''
+
       }
     }
     stage('Test') {
