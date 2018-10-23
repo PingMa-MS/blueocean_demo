@@ -7,7 +7,7 @@ pipeline {
     stage('Build') {
       steps {
         echo "Hello, ${params.Name} from Jenkins Blue Ocean!"
-        bash """#!/bin/bash
+        sh """
                 echo 'Hello, ${params.Name} from Jenkins Blue Ocean!'
                 sudo apt-get install debmake -y
                 deploy/packaging_deb.sh
