@@ -6,12 +6,12 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'I am building some code!'
         echo "Hello, ${params.Name} from Jenkins Blue Ocean!"
-        bash '''#!/bin/bash
-                 sudo apt-get install debmake -y
-                 deploy/packaging_deb.sh 
-        '''
+        bash """#!/bin/bash
+                echo 'Hello, ${params.Name} from Jenkins Blue Ocean!'
+                sudo apt-get install debmake -y
+                deploy/packaging_deb.sh
+        """
 
       }
     }
