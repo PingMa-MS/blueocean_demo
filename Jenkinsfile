@@ -9,7 +9,8 @@ pipeline {
         echo "Hello, ${params.Name} from Jenkins Blue Ocean!"
         sh """
                 echo 'Hello, ${params.Name} from Jenkins Blue Ocean!'
-                sudo -n apt-get install debmake -y
+                which debmake
+                apt-get install debmake -y
                 deploy/packaging_deb.sh
         """
 
